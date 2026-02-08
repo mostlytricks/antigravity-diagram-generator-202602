@@ -80,37 +80,35 @@ def generate_drawio_xml(components, edges, filename_prefix="system_architecture"
     
     content_xml = ""
     
-    # Keep track of generated generated IDs to map for edges
-    node_id_map = {} # client_id -> xml_id
-    
+    # --- Pre-processing: Parse all components into dicts ---
+    parsed_components = []
     for i, comp in enumerate(components):
-        # Robust parsing: Handle stringified JSON
         if isinstance(comp, str):
             try:
-                comp_str = comp
                 comp = json.loads(comp)
-                print(f"DEBUG: Parsed component string (JSON): {comp}")
             except:
                 try:
-                    comp = ast.literal_eval(comp_str)
-                    print(f"DEBUG: Parsed component string (AST): {comp}")
-                except Exception as e:
-                    print(f"Warning: Failed to parse component string: {comp_str[:50]}... Error: {e}")
+                    comp = ast.literal_eval(comp)
+                except:
+                    print(f"Warning: Failed to parse component string: {comp[:50]}")
                     continue
-                
-        if not isinstance(comp, dict):
-            print(f"Warning: Component is not a dict: type={type(comp)}, value={comp}")
-            continue
+        if isinstance(comp, dict):
+            parsed_components.append(comp)
 
+    # Create a map for coordinate lookup (Pre-populated)
+    comp_data_map = {str(comp.get('id', f"node_{i}")): comp for i, comp in enumerate(parsed_components)}
+    
+    # Keep track of generated XML IDs
+    node_id_map = {}
+    
+    for i, comp in enumerate(parsed_components):
         lib_id = comp.get('library_id')
         lib_item = library.get(lib_id)
         if not lib_item:
             continue
             
         new_id = f"node-{uuid.uuid4()}"
-        node_id_map[f"node_{i}"] = new_id # Simple mapping for now, assuming user passes ordered list or we need a better ID scheme in input
-        # actually, let's assume 'id' in input `components` if provided, else generated
-        user_id = comp.get('id', f"node_{i}")
+        user_id = str(comp.get('id', f"node_{i}"))
         node_id_map[user_id] = new_id
         
         # Override value if provided
@@ -125,14 +123,6 @@ def generate_drawio_xml(components, edges, filename_prefix="system_architecture"
         y = comp.get('y', 0)
         
         content_xml += f'<mxCell id="{new_id}" value="{value}" style="{style}" vertex="1" parent="1"><mxGeometry x="{x}" y="{y}" width="{width}" height="{height}" as="geometry"/></mxCell>'
-
-    # Create a map for coordinate lookup
-    comp_data_map = {}
-    for comp in components:
-        if isinstance(comp, dict):
-             uid = comp.get('id')
-             if uid:
-                 comp_data_map[uid] = comp
 
     for edge in edges:
         # Robust parsing: Handle stringified JSON
@@ -153,8 +143,8 @@ def generate_drawio_xml(components, edges, filename_prefix="system_architecture"
             print(f"Warning: Edge is not a dict: {edge}")
             continue
 
-        source_user_id = edge.get('source') or edge.get('source_id')
-        target_user_id = edge.get('target') or edge.get('target_id')
+        source_user_id = str(edge.get('source') or edge.get('source_id') or "")
+        target_user_id = str(edge.get('target') or edge.get('target_id') or "")
         
         source_id = node_id_map.get(source_user_id)
         target_id = node_id_map.get(target_user_id)

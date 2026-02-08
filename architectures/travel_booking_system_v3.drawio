@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<mxfile host="Electron" agent="Mozilla/5.0" version="24.7.17">
+	<diagram name="Page-1" id="demo-diagram">
+		<mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+			<root>
+				<mxCell id="0"/>
+				<mxCell id="1" parent="0"/>
+				<mxCell id="node-9434c3a4-c265-480f-a4ae-4916f9b20999" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" vertex="1" parent="1">
+					<mxGeometry x="300" y="50" width="1000" height="700" as="geometry"/>
+				</mxCell>
+				<mxCell id="node-be30501a-493b-4636-a566-642661d27660" value="Travel Booking System" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;" vertex="1" parent="1">
+					<mxGeometry x="800" y="50" width="210.0" height="30.0" as="geometry"/>
+				</mxCell>
+				<mxCell id="node-c7e953d0-c238-4416-bfcf-8cb42d3ac988" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+					<mxGeometry x="50" y="300" width="30.0" height="60.0" as="geometry"/>
+				</mxCell>
+				<mxCell id="node-096f0951-bc2a-457f-a68a-16a02c965957" value="travel-web-client [container:node.js]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#9999FF);" vertex="1" parent="1">
+					<mxGeometry x="380" y="300" width="120.0" height="60.0" as="geometry"/>
+				</mxCell>
+				<mxCell id="node-3ab2486e-40b0-4c92-a068-da75504ad37d" value="api-gateway [container:node.js]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#9999FF);" vertex="1" parent="1">
+					<mxGeometry x="600" y="300" width="120.0" height="60.0" as="geometry"/>
+				</mxCell>
+				<mxCell id="node-d2ead4ca-f05a-4736-9646-d6dd4bb3b143" value="api-booking-service [container:node.js]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#9999FF);" vertex="1" parent="1">
+					<mxGeometry x="820" y="300" width="120.0" height="60.0" as="geometry"/>
+				</mxCell>
+				<mxCell id="node-472afd87-ea66-4fd1-8bda-4a6b63e862fe" value="api-payment-service [container:node.js]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#9999FF);" vertex="1" parent="1">
+					<mxGeometry x="1040" y="300" width="120.0" height="60.0" as="geometry"/>
+				</mxCell>
+				<mxCell id="node-08c9cc83-8295-4460-b654-c5631d3f9433" value="Booking DB [Postgresql]" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=none;" vertex="1" parent="1">
+					<mxGeometry x="820" y="550" width="80.0" height="100.0" as="geometry"/>
+				</mxCell>
+				<mxCell id="node-04a35470-97f7-40a5-b755-bc358c4c2250" value="User DB [Postgresql]" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=none;" vertex="1" parent="1">
+					<mxGeometry x="1040" y="550" width="80.0" height="100.0" as="geometry"/>
+				</mxCell>
+				<mxCell id="edge-7d615e97-d504-4ff1-ae52-a51c29d2f800" value="Uses" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="node-c7e953d0-c238-4416-bfcf-8cb42d3ac988" target="node-096f0951-bc2a-457f-a68a-16a02c965957">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="edge-8dc740c3-0b00-4a82-9e3e-8bacc57940de" value="Requests" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="node-096f0951-bc2a-457f-a68a-16a02c965957" target="node-3ab2486e-40b0-4c92-a068-da75504ad37d">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="edge-86761ab8-53da-4103-b76c-937facb3f11c" value="Routes Request" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="node-3ab2486e-40b0-4c92-a068-da75504ad37d" target="node-d2ead4ca-f05a-4736-9646-d6dd4bb3b143">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="edge-d226a6e4-4910-4561-982f-de7127d2c7dc" value="Delegates Payment" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="node-d2ead4ca-f05a-4736-9646-d6dd4bb3b143" target="node-472afd87-ea66-4fd1-8bda-4a6b63e862fe">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="edge-ad33142c-1c2f-4486-aaae-c5548e4a6b4b" value="Writes Booking" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="node-d2ead4ca-f05a-4736-9646-d6dd4bb3b143" target="node-08c9cc83-8295-4460-b654-c5631d3f9433">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="edge-dde047a3-a79f-434a-88d5-1f90d2e9ec0a" value="Updates User Info" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="node-472afd87-ea66-4fd1-8bda-4a6b63e862fe" target="node-04a35470-97f7-40a5-b755-bc358c4c2250">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+			</root>
+		</mxGraphModel>
+	</diagram>
+</mxfile>
