@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<mxfile host="Electron" agent="Mozilla/5.0" version="24.7.17">
+	<diagram name="Page-1" id="demo-diagram">
+		<mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+			<root>
+				<mxCell id="0"/>
+				<mxCell id="1" parent="0"/>
+				<mxCell id="node-38427b0c-e756-4e4e-bb65-48cf72838ba0" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" vertex="1" parent="1">
+					<mxGeometry x="300" y="50" width="800" height="600" as="geometry"/>
+				</mxCell>
+				<mxCell id="node-9f089363-13c3-42b6-848f-10cf8a6ea580" value="Payment System" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;" vertex="1" parent="1">
+					<mxGeometry x="550" y="50" width="210.0" height="30.0" as="geometry"/>
+				</mxCell>
+				<mxCell id="node-da8018d8-68d7-4001-abfd-71c1a3c479f9" value="External Payment System" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+					<mxGeometry x="50" y="350" width="30.0" height="60.0" as="geometry"/>
+				</mxCell>
+				<mxCell id="node-63bd8559-bf8f-46a0-9250-374b9de3e50a" value="api-payment-service [container:node.js]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#9999FF);" vertex="1" parent="1">
+					<mxGeometry x="400" y="300" width="120.0" height="60.0" as="geometry"/>
+				</mxCell>
+				<mxCell id="node-3d60e0a9-3d6a-4e7b-8399-f25ab21129bf" value="Transaction DB [Postgresql]" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+					<mxGeometry x="400" y="550" width="80.0" height="100.0" as="geometry"/>
+				</mxCell>
+				<mxCell id="node-03bf9579-c694-487e-b94d-a826d4d6b1c9" value="Audit Log [Kafka]" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;direction=south;fillColor=none;" vertex="1" parent="1">
+					<mxGeometry x="750" y="300" width="100.0" height="80.0" as="geometry"/>
+				</mxCell>
+				<mxCell id="edge-189aa567-8116-4efe-878f-9c3f8e53da9e" value="Initiate Payment" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="node-da8018d8-68d7-4001-abfd-71c1a3c479f9" target="node-63bd8559-bf8f-46a0-9250-374b9de3e50a">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="edge-7698f1c5-8e90-46a9-a2a0-fff54b0c77c9" value="Store Transaction" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="node-63bd8559-bf8f-46a0-9250-374b9de3e50a" target="node-3d60e0a9-3d6a-4e7b-8399-f25ab21129bf">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="edge-a34d628d-7226-48df-a4d9-d629587f8c12" value="Publish Audit Event" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="node-63bd8559-bf8f-46a0-9250-374b9de3e50a" target="node-03bf9579-c694-487e-b94d-a826d4d6b1c9">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+			</root>
+		</mxGraphModel>
+	</diagram>
+</mxfile>

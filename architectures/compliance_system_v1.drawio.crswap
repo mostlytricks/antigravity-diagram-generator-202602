@@ -1,0 +1,40 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36" version="29.3.8">
+  <diagram name="Page-1" id="demo-diagram">
+    <mxGraphModel dx="1426" dy="863" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="node-361df5a6-eb26-47c0-a8fc-7d65c77b2d52" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" value="" vertex="1">
+          <mxGeometry height="600" width="800" x="300" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="node-1042ece3-2345-4354-83a3-87917fbbcc42" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;" value="Compliance System" vertex="1">
+          <mxGeometry height="30" width="210" x="550" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="node-45e03a8f-a65c-4df3-8d66-0bdd0970aba5" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="User" vertex="1">
+          <mxGeometry height="60" width="30" x="50" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="node-464a879f-56a4-4a37-8cc2-65aa47351928" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#9999FF);" value="api-compliance-ingest [container:node.js]" vertex="1">
+          <mxGeometry height="60" width="120" x="400" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="node-b9056c20-5ca1-4b0f-a2af-07160f059e08" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;direction=south;fillColor=none;" value="Compliance Event Stream [Kafka]" vertex="1">
+          <mxGeometry height="80" width="100" x="700" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="node-94386898-df69-4c8b-9b53-6b749a84f377" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" value="Audit Archive DB [Postgresql]" vertex="1">
+          <mxGeometry height="100" width="80" x="550" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-3e6fbe72-1dea-4ceb-b7ab-8f7a85f9db68" edge="1" parent="1" source="node-45e03a8f-a65c-4df3-8d66-0bdd0970aba5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="node-464a879f-56a4-4a37-8cc2-65aa47351928" value="Submits Data">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-01a46ddc-5c28-4990-9a92-6e05fd8019ff" edge="1" parent="1" source="node-464a879f-56a4-4a37-8cc2-65aa47351928" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="node-b9056c20-5ca1-4b0f-a2af-07160f059e08" value="Publishes Event">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-a2d95842-8a1c-4f03-b1df-80bc9a72778f" edge="1" parent="1" source="node-464a879f-56a4-4a37-8cc2-65aa47351928" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="node-94386898-df69-4c8b-9b53-6b749a84f377" value="Audit Log">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Pr4qTTe9ursloBYc-iqt-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#9999FF);" value="api-compliance-ingest [container:node.js]" vertex="1">
+          <mxGeometry height="60" width="120" x="520" y="310" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

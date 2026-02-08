@@ -1,0 +1,308 @@
+[
+  {
+    "id": "MUqYMd9_9H_2uWHAdu_l-4",
+    "value": "",
+    "style": "rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;",
+    "width": 920.0,
+    "height": 520.0,
+    "x": 120.0,
+    "y": 310.0
+  },
+  {
+    "id": "1JigugXchFiT3Wg0BkZb-1",
+    "value": "planner-web-client<div>[container:node.js]</div>",
+    "style": "rounded=0;whiteSpace=wrap;html=1;",
+    "width": 120.0,
+    "height": 60.0,
+    "x": 190.0,
+    "y": 400.0
+  },
+  {
+    "id": "1JigugXchFiT3Wg0BkZb-2",
+    "value": "api-planner-biz<div><div>[container:java]</div></div>",
+    "style": "rounded=0;whiteSpace=wrap;html=1;",
+    "width": 120.0,
+    "height": 60.0,
+    "x": 410.0,
+    "y": 400.0
+  },
+  {
+    "id": "MUqYMd9_9H_2uWHAdu_l-1",
+    "value": "System DB<div>[Oracle]</div>",
+    "style": "shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;",
+    "width": 80.0,
+    "height": 100.0,
+    "x": 700.0,
+    "y": 380.0
+  },
+  {
+    "id": "MUqYMd9_9H_2uWHAdu_l-2",
+    "value": "System DB 2<div>[Postgresql]</div>",
+    "style": "shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;",
+    "width": 80.0,
+    "height": 100.0,
+    "x": 810.0,
+    "y": 510.0
+  },
+  {
+    "id": "MUqYMd9_9H_2uWHAdu_l-3",
+    "value": "Website User<div><br></div>",
+    "style": "shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;",
+    "width": 30.0,
+    "height": 60.0,
+    "x": 110.0,
+    "y": 60.0
+  },
+  {
+    "id": "MUqYMd9_9H_2uWHAdu_l-11",
+    "value": "System Name : My Travel Planner",
+    "style": "text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;",
+    "width": 210.0,
+    "height": 30.0,
+    "x": 360.0,
+    "y": 310.0
+  },
+  {
+    "id": "MUqYMd9_9H_2uWHAdu_l-12",
+    "value": "api-planner-transaction<div><div>[container:java]</div></div>",
+    "style": "rounded=0;whiteSpace=wrap;html=1;",
+    "width": 120.0,
+    "height": 60.0,
+    "x": 410.0,
+    "y": 500.0
+  },
+  {
+    "id": "MUqYMd9_9H_2uWHAdu_l-14",
+    "value": "<div><div>api-user-analyze</div><div>[container:python]</div></div>",
+    "style": "rounded=0;whiteSpace=wrap;html=1;",
+    "width": 120.0,
+    "height": 60.0,
+    "x": 410.0,
+    "y": 600.0
+  },
+  {
+    "id": "MUqYMd9_9H_2uWHAdu_l-15",
+    "value": "<div>RAG</div><div>[Vector DB]</div>",
+    "style": "shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;",
+    "width": 80.0,
+    "height": 100.0,
+    "x": 810.0,
+    "y": 630.0
+  },
+  {
+    "id": "dv7I9-Y2neh1ySf-e8qv-1",
+    "value": "<div><div>api-traffic-analyze</div><div>[container:python]</div></div>",
+    "style": "rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#9999FF);",
+    "width": 120.0,
+    "height": 60.0,
+    "x": 410.0,
+    "y": 710.0
+  },
+  {
+    "id": "node-b92fe71a-8f6f-4ae7-8c0a-087dbdeb7bfa",
+    "value": "",
+    "style": "rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;",
+    "width": 920.0,
+    "height": 520.0,
+    "x": 300.0,
+    "y": 50.0
+  },
+  {
+    "id": "node-f201e905-bd6e-47de-b19c-cf9da1a0d1a8",
+    "value": "Travel System",
+    "style": "text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;",
+    "width": 210.0,
+    "height": 30.0,
+    "x": 550.0,
+    "y": 50.0
+  },
+  {
+    "id": "node-ad1a1fc8-6a7d-43ef-bb3f-12ff178d70f4",
+    "value": "Traveler",
+    "style": "shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;",
+    "width": 30.0,
+    "height": 60.0,
+    "x": 50.0,
+    "y": 350.0
+  },
+  {
+    "id": "node-2605de03-3fdf-4c1e-b56f-51f29f254ddf",
+    "value": "External Travel APIs",
+    "style": "rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#9999FF);",
+    "width": 120.0,
+    "height": 60.0,
+    "x": 1300.0,
+    "y": 350.0
+  },
+  {
+    "id": "node-af98aa44-377f-4e1a-9b88-30b29df6ca6e",
+    "value": "travel-support-web-client [container:node.js]",
+    "style": "rounded=0;whiteSpace=wrap;html=1;fillColor=none;",
+    "width": 120.0,
+    "height": 60.0,
+    "x": 400.0,
+    "y": 200.0
+  },
+  {
+    "id": "node-850521c7-69ab-4302-9ecd-d63cb7b55d9b",
+    "value": "api-suggestion-module [container:python]",
+    "style": "rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#9999FF);",
+    "width": 120.0,
+    "height": 60.0,
+    "x": 700.0,
+    "y": 200.0
+  },
+  {
+    "id": "node-a2400fcf-8535-4093-abe9-6a2da6ac9674",
+    "value": "General Redis Cache [Redis]",
+    "style": "rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#9999FF);",
+    "width": 120.0,
+    "height": 60.0,
+    "x": 1000.0,
+    "y": 200.0
+  },
+  {
+    "id": "node-3a5f9746-3cf9-4a67-b204-02a6f4c9cda9",
+    "value": "api-user-login-service [container:java]",
+    "style": "rounded=0;whiteSpace=wrap;html=1;fillColor=none;",
+    "width": 120.0,
+    "height": 60.0,
+    "x": 400.0,
+    "y": 400.0
+  },
+  {
+    "id": "node-77da87c2-85a2-42ca-98e8-a838dcf04e56",
+    "value": "api-token-service [container:go]",
+    "style": "rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#2A00FF);",
+    "width": 120.0,
+    "height": 60.0,
+    "x": 700.0,
+    "y": 400.0
+  },
+  {
+    "id": "node-14162bf1-052e-455d-99ea-e2d0a82a8e02",
+    "value": "api-reservation-system [container:node.js]",
+    "style": "rounded=0;whiteSpace=wrap;html=1;fillColor=none;",
+    "width": 120.0,
+    "height": 60.0,
+    "x": 400.0,
+    "y": 600.0
+  },
+  {
+    "id": "node-3847d6da-0a5e-417a-9018-2c459964cd8b",
+    "value": "api-user-analytics-service [container:python]",
+    "style": "rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#9999FF);",
+    "width": 120.0,
+    "height": 60.0,
+    "x": 700.0,
+    "y": 600.0
+  },
+  {
+    "id": "node-2dac1b7c-6bb1-4a5c-9887-0493ee66a7a4",
+    "value": "User System DB [Postgresql]",
+    "style": "shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;",
+    "width": 80.0,
+    "height": 100.0,
+    "x": 400.0,
+    "y": 750.0
+  },
+  {
+    "id": "node-c32d00b5-ef21-494f-9ff7-9501d00e8133",
+    "value": "Session DB [Redis]",
+    "style": "shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;",
+    "width": 80.0,
+    "height": 100.0,
+    "x": 720.0,
+    "y": 750.0
+  },
+  {
+    "id": "node-e1ee4dd1-16de-4cd6-9e34-95e7480f41a0",
+    "value": "Booking System DB [Oracle]",
+    "style": "shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=default;",
+    "width": 80.0,
+    "height": 100.0,
+    "x": 1000.0,
+    "y": 750.0
+  },
+  {
+    "id": "6geTlLW6moYfB3dahCE5-1",
+    "value": "Message Queue [Kafka]",
+    "style": "shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;direction=south;fillColor=none;",
+    "width": 100.0,
+    "height": 80.0,
+    "x": 1030.0,
+    "y": 380.0
+  },
+  {
+    "id": "node-361df5a6-eb26-47c0-a8fc-7d65c77b2d52",
+    "value": "",
+    "style": "rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;",
+    "width": 800.0,
+    "height": 600.0,
+    "x": 300.0,
+    "y": 50.0
+  },
+  {
+    "id": "node-1042ece3-2345-4354-83a3-87917fbbcc42",
+    "value": "Compliance System",
+    "style": "text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;",
+    "width": 210.0,
+    "height": 30.0,
+    "x": 550.0,
+    "y": 50.0
+  },
+  {
+    "id": "node-45e03a8f-a65c-4df3-8d66-0bdd0970aba5",
+    "value": "User",
+    "style": "shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;",
+    "width": 30.0,
+    "height": 60.0,
+    "x": 50.0,
+    "y": 250.0
+  },
+  {
+    "id": "node-464a879f-56a4-4a37-8cc2-65aa47351928",
+    "value": "api-compliance-ingest [container:node.js]",
+    "style": "rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#9999FF);",
+    "width": 120.0,
+    "height": 60.0,
+    "x": 400.0,
+    "y": 250.0
+  },
+  {
+    "id": "node-b9056c20-5ca1-4b0f-a2af-07160f059e08",
+    "value": "Compliance Event Stream [Kafka]",
+    "style": "shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;direction=south;fillColor=none;",
+    "width": 100.0,
+    "height": 80.0,
+    "x": 700.0,
+    "y": 250.0
+  },
+  {
+    "id": "node-94386898-df69-4c8b-9b53-6b749a84f377",
+    "value": "Audit Archive DB [Postgresql]",
+    "style": "shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=none;",
+    "width": 80.0,
+    "height": 100.0,
+    "x": 550.0,
+    "y": 500.0
+  },
+  {
+    "id": "Pr4qTTe9ursloBYc-iqt-1",
+    "value": "api-compliance-analyze [container:node.js]",
+    "style": "rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#9999FF);",
+    "width": 120.0,
+    "height": 60.0,
+    "x": 910.0,
+    "y": 250.0
+  },
+  {
+    "id": "Pr4qTTe9ursloBYc-iqt-3",
+    "value": "Analyze DB [Postgresql]",
+    "style": "shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=none;",
+    "width": 80.0,
+    "height": 100.0,
+    "x": 930.0,
+    "y": 500.0
+  }
+]

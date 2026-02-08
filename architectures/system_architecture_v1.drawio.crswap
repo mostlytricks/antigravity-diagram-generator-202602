@@ -1,0 +1,39 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36" version="29.3.8">
+  <diagram name="Page-1" id="demo-diagram">
+    <mxGraphModel dx="1426" dy="863" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="node-d93540c1-508f-4a67-ab36-bedb54bc7f93" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" value="" vertex="1">
+          <mxGeometry height="600" width="800" x="300" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="node-154e5a01-ed06-4ea3-88ad-e2a87aee4603" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;" value="Notification System" vertex="1">
+          <mxGeometry height="30" width="210" x="550" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="node-5ad199f2-75c2-4da9-b885-ad22e854e9fb" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#9999FF);" value="External Service [container:go]" vertex="1">
+          <mxGeometry height="60" width="120" x="50" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="node-10171ed0-6d4e-4294-ab20-c53bd907c978" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#9999FF);" value="api-notification-service [container:go]" vertex="1">
+          <mxGeometry height="60" width="120" x="400" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="node-3954a591-dd75-4396-ad06-1ab4acc58ef6" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;direction=south;fillColor=none;" value="Notification Bus [Kafka]" vertex="1">
+          <mxGeometry height="80" width="100" x="750" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="node-a3eddead-b0af-4ca2-bf8a-fbd792e7f55a" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=none;" value="Notification History DB [Postgresql]" vertex="1">
+          <mxGeometry height="100" width="80" x="575" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-216693a2-228f-4515-88e1-0c55dd60d77f" edge="1" parent="1" source="node-5ad199f2-75c2-4da9-b885-ad22e854e9fb" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="node-10171ed0-6d4e-4294-ab20-c53bd907c978" value="REST Call">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-512df6d1-37ef-48cf-b907-0342c84f9ba8" edge="1" parent="1" source="node-10171ed0-6d4e-4294-ab20-c53bd907c978" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="node-a3eddead-b0af-4ca2-bf8a-fbd792e7f55a" value="Writes History">
+          <mxGeometry relative="1" x="0.6226" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-41e5f473-2127-4424-b1c6-d1c56cafc77f" edge="1" parent="1" source="node-10171ed0-6d4e-4294-ab20-c53bd907c978" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="node-3954a591-dd75-4396-ad06-1ab4acc58ef6" value="Publishes Event">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
