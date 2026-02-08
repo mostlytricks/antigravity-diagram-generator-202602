@@ -8,10 +8,11 @@ This project implements an intelligent AI agent capable of generating Draw.io sy
 -   **Smart Inference**: Automatically splits high-level requests (e.g., "React App") into `frontend` + `backend` components.
 -   **Tech Stack Awareness**: Auto-labels components with their runtime (e.g., `[container:node.js]`, `[container:go]`).
 -   **System Boundaries**: Intelligently groups internal services inside a dashed boundary, keeping users/external actors outside.
--   **Hybrid Styling**:
-    -   **Legacy**: Uses existing white styles for standard components.
-    -   **Modern**: Uses a colored style for new/generic services.
--   **Versioning**: Automatically saves diagrams to `architectures/` with version incrementing (e.g., `todo_system_v1.drawio`, `v2...`).
+-   **Semantic Distinction**: Intelligently distinguish between **Streaming** (Kafka/Queues -> Rotated Cylinder) and **Storage** (Databases/Audit Logs -> Standard Cylinder).
+-   **Dynamic Edge Routing**: Automatically selects the best connection ports based on relative positions (e.g., Service-to-DB connections use a clean vertical path Exit Bottom -> Entry Top).
+-   **Robust Model Interaction**: Fail-safe parsing (JSON + AST) handles variable LLM outputs to ensure diagram generation never fails.
+-   **Prompting Guideline**: Includes a [Prompt Guideline](./prompt_guideline.md) for users and other LLMs to maximize generation quality.
+-   **Versioning**: Automatically saves diagrams to `architectures/` with version incrementing.
 
 ## 🛠️ Setup
 
@@ -35,30 +36,19 @@ This project implements an intelligent AI agent capable of generating Draw.io sy
 Run the agent via the command line with your prompt:
 
 ```bash
-uv run python agent.py "Create a system for a 'Travel Planner' app using Next.js and Java, connecting to an Oracle DB. Group them in 'Travel System'."
+uv run python agent.py "Create a Notification System. Components: API, Message Bus (Kafka), Profile DB. Align DB below API."
 ```
 
 ### Output
 The agent will generate a `.drawio` file in the `architectures/` directory:
--   `architectures/travel_system_v1.drawio`
+-   `architectures/notification_system_v1.drawio`
 
-You can open this file directly in [draw.io](https://app.diagrams.net/).
+Open the output file in [draw.io](https://app.diagrams.net/).
 
-## 📂 File Structure
+## 🧠 Core Architecture
 
--   **`agent.py`**: The main entry point. Defines the ADK Agent, System Prompt, and Runner. Contains the core logic for architectural inference and layout strategy.
--   **`extractor.py`**: A utility script to parse existing `.drawio` or `.html` files in `sample/` and rebuild `library.json`.
-    -   Usage: `uv run python extractor.py sample`
--   **`library.json`**: The database of reusable components (shapes, styles, sizes) extracted from samples.
--   **`tools.py`**: Helper functions called by the agent to list components and generate/save the XML.
--   **`architectures/`**: The output directory where generated diagrams are saved.
--   **`sample/`**: Directory containing reference Draw.io files used to train/populate the library.
-
-## 🧠 How It Works
-
-1.  **Extraction**: `extractor.py` reads styles from `sample/` and saves them to `library.json`.
-2.  **Inference**: The Agent processes your prompt, breaking it down into specific components (Web Client, API, DB) and determining their relationships.
-3.  **Layout**: It applies strict layout rules:
-    -   **Internal** components (APIs, DBs) go inside the System Boundary (Box).
-    -   **External** components (Users) stay outside.
-4.  **Generation**: `tools.py` constructs the XML, applying the correct styles (Colored for new services, White for legacy) and saves it with a versioned filename.
+-   **`agent.py`**: The "brain". Handles architectural inference and layout strategy using Few-Shot prompting.
+-   **`extractor.py`**: The "librarian". Parses sample diagrams in `sample/` to populate `library.json` with reusable styles and shapes.
+-   **`tools.py`**: The "drafter". Implementation of dynamic routing, coordinate mapping, and XML construction.
+-   **`library.json`**: The database of extracted components.
+-   **`prompt_guideline.md`**: Best practices for interacting with the agent.
