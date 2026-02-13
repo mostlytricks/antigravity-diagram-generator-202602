@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<mxfile host="Electron" agent="Mozilla/5.0" version="24.7.17">
+	<diagram name="Page-1" id="demo-diagram">
+		<mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+			<root>
+				<mxCell id="0"/>
+				<mxCell id="1" parent="0"/>
+				<mxCell id="node-f7a5d4fd-838b-43c6-bec4-16b7aa050718" value="Customer" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+					<mxGeometry x="625" y="100" width="30.0" height="60.0" as="geometry"/>
+				</mxCell>
+				<mxCell id="node-876329e7-b10e-46aa-9224-341fb00e8451" value="Admin Panel [tier:frontend]" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+					<mxGeometry x="625" y="350" width="120.0" height="60.0" as="geometry"/>
+				</mxCell>
+				<mxCell id="node-2fc75147-9173-4eaf-b101-a1eaaec7d296" value="api-core [tier:service]" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+					<mxGeometry x="450" y="600" width="120.0" height="60.0" as="geometry"/>
+				</mxCell>
+				<mxCell id="node-9f3826a1-235c-4272-8d8b-d51a59cd603f" value="System Boundary" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" vertex="1" parent="1">
+					<mxGeometry x="390" y="250" width="590" height="470" as="geometry"/>
+				</mxCell>
+			</root>
+		</mxGraphModel>
+	</diagram>
+</mxfile>

@@ -2,13 +2,14 @@ from google.adk import Agent
 from google.adk.runners import Runner
 from google.adk.sessions.in_memory_session_service import InMemorySessionService
 from google.genai import types
-from tools import list_components, generate_drawio_xml
+from .tools import list_components, generate_drawio_xml
 import sys
 import uuid
 import os
 from dotenv import load_dotenv
 
-load_dotenv()
+# Try to load .env from the project root (2 levels up) if not found automatically
+load_dotenv(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), '.env'))
 
 
 # Define the Agent
@@ -80,8 +81,10 @@ def create_agent():
             -  Call `generate_drawio_xml` with:
                - `components`: The list of all components. **MUST BE A LIST OF DICTIONARIES**, NOT STRINGS.
                - `edges`: The list of all edges.
-               - `filename_prefix`: The snake_case version of the System Title (e.g., 'Todo System' -> 'todo_system').
-            -   This will automatically save to `architectures/[prefix]_v[n].drawio`.
+               - `filename_prefix`: The snake_case version of the System Title.
+               - `layout_multiplier`: Float (default 1.0). Use this if the user (or Consultant Agent) requested a specific scale.
+               - `source_prompt`: STRING. Pass the ORIGINAL USER PROMPT (my instructions to you) here so it can be archived.
+             -   This will automatically save to `architectures/[prefix]_v[n].drawio`.
             -  **ORDER MATTERS**: The 'System Boundary' must be the **first** element in the list.
             -  Each component needs: `id`, `library_id`, `x`, `y`, and `label`.
             
@@ -157,6 +160,41 @@ def main():
                 print(f"DEBUG Part: {part}")
                 if part.text:
                     print(part.text)
+
+def run_diagram_agent(user_input: str):
+    """
+    Exposed function to run the diagram agent programmatically.
+    """
+    agent = create_agent()
+    session_service = InMemorySessionService()
+    runner = Runner(
+        agent=agent,
+        app_name="drawio-agent-demo",
+        session_service=session_service,
+        auto_create_session=True
+    )
+    
+    user_id = "external-caller"
+    session_id = str(uuid.uuid4())
+    
+    print(f"Diagram Agent invoked with: {user_input}")
+    
+    events = runner.run(
+        user_id=user_id,
+        session_id=session_id,
+        new_message=types.Content(parts=[types.Part(text=user_input)])
+    )
+    
+    # Collect results
+    result_text = ""
+    for event in events:
+         if event.content:
+             for part in event.content.parts:
+                 if part.text:
+                     result_text += part.text + "\n"
+                     
+    return result_text.strip()
+
 
 if __name__ == "__main__":
     main()

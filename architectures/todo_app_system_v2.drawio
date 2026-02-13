@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<mxfile host="Electron" agent="Mozilla/5.0" version="24.7.17">
+	<diagram name="Page-1" id="demo-diagram">
+		<mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+			<root>
+				<mxCell id="0"/>
+				<mxCell id="1" parent="0"/>
+				<mxCell id="node-21bd990c-1ab2-4ea1-acff-788f41bbbb1a" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" vertex="1" parent="1">
+					<mxGeometry x="215" y="250" width="940" height="1010" as="geometry"/>
+				</mxCell>
+				<mxCell id="node-40375276-2c46-4ef3-a62f-8ed84c9283d4" value="Todo System" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;" vertex="1" parent="1">
+					<mxGeometry x="625" y="600" width="210.0" height="30.0" as="geometry"/>
+				</mxCell>
+				<mxCell id="node-176856b7-ce85-4bf5-bc92-d59ea1426b6d" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+					<mxGeometry x="625" y="100" width="30.0" height="60.0" as="geometry"/>
+				</mxCell>
+				<mxCell id="node-fcca233d-0226-4e19-9f64-7c5716a81bc2" value="todo-web-client [container:node.js]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#9999FF);" vertex="1" parent="1">
+					<mxGeometry x="625" y="350" width="120.0" height="60.0" as="geometry"/>
+				</mxCell>
+				<mxCell id="node-b9572a29-cfbe-4d23-9733-f745e4e3a1a2" value="api-todo-service [container:python]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#9999FF);" vertex="1" parent="1">
+					<mxGeometry x="975" y="600" width="120.0" height="60.0" as="geometry"/>
+				</mxCell>
+				<mxCell id="node-d3ab414b-0ccc-4e8c-9b63-f03749f168a7" value="Todo DB [Postgresql]" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=none;" vertex="1" parent="1">
+					<mxGeometry x="625" y="850" width="80" height="80" as="geometry"/>
+				</mxCell>
+				<mxCell id="edge-5a077c70-505f-405a-8c14-5b24540994a2" value="Uses" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="node-176856b7-ce85-4bf5-bc92-d59ea1426b6d" target="node-fcca233d-0226-4e19-9f64-7c5716a81bc2">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="edge-6de00858-2869-4728-acbf-3cdccb9d0307" value="API Calls" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="node-fcca233d-0226-4e19-9f64-7c5716a81bc2" target="node-b9572a29-cfbe-4d23-9733-f745e4e3a1a2">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="edge-6f0e1655-cd7d-438b-b56d-1b07c0c5f7f2" value="Persists" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="node-b9572a29-cfbe-4d23-9733-f745e4e3a1a2" target="node-d3ab414b-0ccc-4e8c-9b63-f03749f168a7">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+			</root>
+		</mxGraphModel>
+	</diagram>
+</mxfile>

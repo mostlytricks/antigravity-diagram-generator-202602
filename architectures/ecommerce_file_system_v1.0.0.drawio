@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<mxfile host="Electron" agent="Mozilla/5.0" version="24.7.17">
+	<diagram name="Page-1" id="demo-diagram">
+		<mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+			<root>
+				<mxCell id="0"/>
+				<mxCell id="1" parent="0"/>
+				<mxCell id="node-d9f34320-5e8a-4243-861e-8606e9a814d1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" vertex="1" parent="1">
+					<mxGeometry x="-10" y="0" width="1640" height="1010" as="geometry"/>
+				</mxCell>
+				<mxCell id="node-01cf50d7-8ac1-4986-9286-98fcaad14108" value="Ecommerce System" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;" vertex="1" parent="1">
+					<mxGeometry x="400" y="350" width="210.0" height="30.0" as="geometry"/>
+				</mxCell>
+				<mxCell id="node-a9099238-f7be-4c8b-a780-811250dd40a2" value="Customer" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+					<mxGeometry x="750" y="350" width="30.0" height="60.0" as="geometry"/>
+				</mxCell>
+				<mxCell id="node-8e1552aa-81df-4ee0-81b0-0cfa6f43e6a1" value="ecommerce-web-client [container:node.js]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#9999FF);" vertex="1" parent="1">
+					<mxGeometry x="625" y="100" width="120.0" height="60.0" as="geometry"/>
+				</mxCell>
+				<mxCell id="node-af5eccd2-591c-4d75-8d35-3ae029d72bf7" value="api-ecommerce-service [container:python]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#9999FF);" vertex="1" parent="1">
+					<mxGeometry x="1100" y="350" width="120.0" height="60.0" as="geometry"/>
+				</mxCell>
+				<mxCell id="node-c1520253-b332-4de1-b114-3ede8630b6f0" value="Local File System [File Storage]" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=none;" vertex="1" parent="1">
+					<mxGeometry x="1450" y="350" width="80.0" height="100.0" as="geometry"/>
+				</mxCell>
+				<mxCell id="edge-9f19c634-5b9b-4875-9d9d-620e67b61206" value="Visits" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="node-a9099238-f7be-4c8b-a780-811250dd40a2" target="node-8e1552aa-81df-4ee0-81b0-0cfa6f43e6a1">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="edge-bd4f0dc1-5b0e-442d-a520-99a630df0a00" value="API Calls" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="node-8e1552aa-81df-4ee0-81b0-0cfa6f43e6a1" target="node-af5eccd2-591c-4d75-8d35-3ae029d72bf7">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+				<mxCell id="edge-e56ea14e-9b5c-4eec-a3e5-a812bcf9455c" value="Reads/Writes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="node-af5eccd2-591c-4d75-8d35-3ae029d72bf7" target="node-c1520253-b332-4de1-b114-3ede8630b6f0">
+					<mxGeometry relative="1" as="geometry"/>
+				</mxCell>
+			</root>
+		</mxGraphModel>
+	</diagram>
+</mxfile>
